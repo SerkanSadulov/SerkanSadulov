@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=JSL+Ancient&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    scroll-behavior: smooth;
+}
+
+.story-section {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 40px 20px; /* Adjust padding as needed */
+    box-sizing: border-box;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#section1 {
+    background-image: url('Eldoira.png');
+}
+
+#section2 {
+    background-image: url('Shadowed vale.png');
+}
+
+#section3 {
+    background-image: url('Woods.png');
+}
+
+
+
+.story-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: justify;
+    background: rgba(0, 0, 0, 0.8); /* Darkens the background slightly for text to pop */
+    padding: 20px;
+    border-radius: 10px; /* Softens the edges */
+    color: #EDE7D9; /* Lighter text color for readability */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Adds subtle shadow for depth */
+    border: 1px solid #d2b48c; /* Subtle border to define the content area */
+}
+
+.character-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+    background: url('bg1.png') no-repeat center center/cover; /* Adds a thematic background */
+    border-radius: 15px; /* Optional: adds rounded corners */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Adds depth with a shadow */
+    margin: 20px; /* Adds some space around the container */
+}
+
+.character img {
+    width: 200px; /* Adjust based on your preference */
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #d2b48c; /* Gold-like frame to make images pop */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Enhances depth */
+}
+
+.character h3 {
+    color: #fff; /* Makes text color white for better contrast */
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'JSL Ancient', cursive; /* Keeps the medieval theme */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Adds a shadow to the text for readability */
+}
+
+@media (max-width: 768px) {
+    .character-container {
+        flex-direction: column;
+    }
+}
