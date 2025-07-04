@@ -1,474 +1,1079 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Serkan Sadulov</title>
     <link rel="icon" type="image/x-icon" href="./tab.png" />
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-        type="text/css" />
-    <link href="css/styles.css" rel="stylesheet" />
-</head>
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+        :root {
+        --primary-color: white;     /* primary accent (used for gradients, highlights) */
+        --secondary-color: #1B1A55;   /* deep blue-purple for contrast */
+        --accent-color: #4E6688;      /* soft violet for buttons/icons/accents */
+        --dark-bg: #070F2B;           /* background color (very dark navy) */
+        --darker-bg: black;         /* slightly darker for contrast layering */
+        --light-text: #ffffff;        /* white text for maximum readability */
+        --card-bg: rgba(146, 144, 195, 0.05); /* soft violet background with transparency */
+        }
 
-<body id="page-top">
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top">Serkan Sadulov</a>
-            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About
-                            Me</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#contact">Achivements</a></li>
-                </ul>
-            </div>
+
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          135deg,
+          var(--dark-bg) 0%,
+          var(--darker-bg) 100%
+        );
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* Navigation */
+      .navbar {
+        background: rgba(26, 26, 46, 0.95) !important;
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand {
+        font-weight: 600;
+        font-size: 1.5rem;
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .nav-link {
+        color: white !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: var(--accent-color) !important;
+        transform: translateY(-2px);
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Hero Section */
+      .masthead {
+        background: linear-gradient(
+          135deg,
+          var(--dark-bg) 0%,
+          var(--darker-bg) 100%
+        );
+        padding: 120px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .masthead::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23667eea" fill-opacity="0.1" points="0,1000 1000,0 1000,1000"/></svg>');
+        z-index: -1;
+      }
+
+      .masthead-avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px solid;
+        border-image: linear-gradient(
+            45deg,
+            var(--primary-color),
+            var(--accent-color)
+          )
+          1;
+        box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .masthead-avatar:hover {
+        transform: scale(1.05);
+        box-shadow: 0 25px 50px rgba(102, 126, 234, 0.4);
+      }
+
+      .masthead-heading {
+        font-size: 4rem;
+        font-weight: 700;
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 2rem 0;
+      }
+
+      .masthead-subheading {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 300;
+      }
+
+      .divider-custom {
+        margin: 3rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .divider-custom-line {
+        width: 100px;
+        height: 2px;
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+      }
+
+      .divider-custom-icon {
+        margin: 0 1rem;
+        font-size: 2rem;
+        color: var(--accent-color);
+      }
+
+      /* About Section */
+      .page-section {
+        padding: 80px 0;
+      }
+
+      .page-section-heading {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .tech-list {
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 2rem;
+      }
+
+      .tech-item {
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--primary-color)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .tech-item:hover {
+        transform: translateX(10px);
+      }
+
+      /* Portfolio Section */
+      .portfolio {
+        background: linear-gradient(
+          135deg,
+          var(--darker-bg) 0%,
+          var(--dark-bg) 100%
+        );
+      }
+
+      .portfolio-item {
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+      }
+
+      .portfolio-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .portfolio-item-caption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(102, 126, 234, 0.9);
+        opacity: 0;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .portfolio-item:hover .portfolio-item-caption {
+        opacity: 1;
+      }
+
+      .portfolio-title {
+        padding: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Awards Section */
+      .awards-list {
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+      }
+
+      .award-item {
+        background: transparent;
+        border: none;
+        color: white;
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .award-item:hover {
+        background: rgba(102, 126, 234, 0.1);
+        transform: translateX(10px);
+      }
+
+      .award-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .award-item:hover::before {
+        opacity: 1;
+      }
+
+      .expand-btn {
+        background: linear-gradient(
+          45deg,
+          var(--secondary-color),
+          var(--accent-color)
+        );
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin-top: 2rem;
+      }
+
+      .expand-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--darker-bg);
+        padding: 60px 0 20px;
+      }
+
+      .social-btn {
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        margin: 0 10px;
+      }
+
+      .social-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+      }
+
+      /* Modal Styles */
+      .modal-content {
+        background: var(--dark-bg);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+      }
+
+      .modal-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .btn-close {
+        filter: invert(1);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .masthead-heading {
+          font-size: 2.5rem;
+        }
+
+        .page-section-heading {
+          font-size: 2rem;
+        }
+
+        .masthead-avatar {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="page-top">
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#page-top">Serkan Sadulov</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="#about">About Me</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="#awards">Awards</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-    <header class="masthead bg-secondary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <img class="masthead-avatar mb-5" src="assets/img/Logo.png" alt="..." />
-            <h1 class="masthead-heading text-uppercase mb-0">Serkan Sadulov</h1>
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <p class="masthead-subheading font-weight-light mb-0">Full Stack Web Developer, Desktop Applications
-                Developer, UI/UX,
-                QA</p>
+
+    <header class="masthead text-center">
+      <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading fade-in-up">Serkan Sadulov</h1>
+        <div class="divider-custom fade-in-up">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+          <div class="divider-custom-line"></div>
         </div>
+        <p class="masthead-subheading fade-in-up">
+          Full Stack Web Developer • Desktop Applications Developer 
+        </p>
+      </div>
     </header>
-    <section class="page-section bg-dark text-white mb-0" id="about">
-        <div class="container">
-            <h2 class="page-section-heading text-center text-uppercase text-white">About Me</h2>
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div class="row">
-                <div class="col-lg-5 ms-auto text-justify">
-                    <p class="lead">Hello, my name is Serkan, and I am currently a student at the
-                        University of
-                        Ruse. I
-                        have been passionately involved in
-                        full-stack web development since high school, cultivating a robust understanding of data
-                        structures, algorithms and databases.
-                        Throughout my journey, I have successfully developed multiple websites and web applications,
-                        leveraging Electron to
-                        create sophisticated user experiences. Additionally, I have contributed my skills and creativity
-                        to the design and
-                        development of two games, showcasing my versatility and commitment to innovation in technology.
-                    </p>
-                </div>
-                <div class="col-lg-5 me-auto text-justify">
-                    <p class="lead">Throughout my tech journey, I've had the opportunity to work with a
-                        diverse palette
-                        of technologies, each contributing
-                        to my growing expertise in the digital creation realm. My toolkit includes:
-                    <h5>
-                        - JavaScript, HTML, CSS/SCSS
-                        <br>
-                        - ElectronJS
-                        <br>
-                        - ASP.Net
-                        <br>
-                        - C/C++
-                        <br>
-                        - NodeJS
-                        <br>
-                        - ExpressJS
-                        <br>
-                        - MSSQL, TSQL, MySQL & MongoDB
-                        <br>
-                        - Selenium
-                        <br>
-                        - C#
-                        <br>
-                        - Unity
-                        <br>
-                        - Java
-                        <br>
-                        - Php
-                        <br>
-                    </h5>
-                    Additional technologies that I have worked with:
-                    <h5>Photoshop, Davinci Resolve, Sony Vegas</h5>
 
-                    </p>
-                </div>
-            </div>
-            <!-- About Section Button-->
-            <!-- <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                        <i class="fas fa-download me-2"></i>
-                        Free Download!
-                    </a>
-                </div> -->
+    <section class="page-section" id="about">
+      <div class="container">
+        <h2 class="page-section-heading text-center">About Me</h2>
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-user"></i></div>
+          <div class="divider-custom-line"></div>
         </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="lead">
+              Hello, my name is Serkan, and I am currently working at the
+              University of Ruse. I have been passionately involved in
+              full-stack web development since high school, cultivating a robust
+              understanding of data structures, algorithms and databases.
+            </p>
+            <p class="lead">
+              Throughout my journey, I have successfully developed multiple
+              websites and web applications, leveraging technologies such as
+              ASP.NET, JavaScript, NodeJS and Electron to create sophisticated
+              user experiences. Additionally, I have contributed my skills and
+              creativity to the design and development of two games, showcasing
+              my versatility and commitment to innovation in technology.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="tech-list m-0">
+              <h4 class="mb-3">Technical Skills</h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="tech-item">• ASP.Net</div>
+                  <div class="tech-item">• C#</div>
+                  <div class="tech-item">• Git</div>
+                  <div class="tech-item">
+                    • JavaScript, JQuery, HTML, CSS/SCSS
+                  </div>
+                  <div class="tech-item">• NodeJS</div>
+                  <div class="tech-item">• ExpressJS</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="tech-item">• MSSQL, TSQL, MySQL, MongoDB</div>
+                  <div class="tech-item">• MongoDB</div>
+                  <div class="tech-item">• Selenium</div>
+                  <div class="tech-item">• ElectronJS</div>
+                  <div class="tech-item">• Unity</div>
+                  <div class="tech-item">• PHP</div>
+                  <div class="tech-item">• C/C++</div>
+                </div>
+              </div>
+              <h5 class="mt-3">Additional Tools</h5>
+              <div class="tech-item">
+                • Photoshop, DaVinci Resolve, Sony Vegas
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="page-section portfolio bg-secondary" id="portfolio">
-        <div class="container">
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fa fa-arrow-right fa-3x"></i></div>
-                        </div>
-                        <h3 class="text-white">MSSK Studio</h3>
-                        <img class="img-fluid" src="assets/img/portfolio/MSSK.png" alt="..." />
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fa fa-arrow-right fa-3x"></i></div>
-                        </div>
-                        <h3 class="text-white">Tsar Launcher</h3>
-                        <img class="img-fluid" src="assets/img/portfolio/Tsar.png" alt="..." />
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fa fa-arrow-right fa-3x"></i></div>
-                        </div>
-                        <h3 class="text-white">Ember Eye</h3>
-                        <img class="img-fluid" src="assets/img/portfolio/eternal.png" alt="..." />
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fa fa-arrow-right fa-3x"></i></div>
-                        </div>
-                        <h3 class="text-white">The Meaning</h3>
-                        <img class="img-fluid" src="assets/img/portfolio/meaning.jpg" alt="..." />
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fa fa-arrow-right fa-3x"></i></div>
-                        </div>
-                        <h3 class="text-white">Eternal Vigil</h3>
-                        <img class="img-fluid" src="assets/img/portfolio/Vigil.png" alt="..." />
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fa fa-arrow-right fa-3x"></i></div>
-                        </div>
-                        <h3 class="text-white">Forkpoint</h3>
-                        <img class="img-fluid" src="assets/img/portfolio/Forkpoint.png" alt="..." />
-                    </div>
-                </div>
-            </div>
+    <section class="page-section portfolio" id="portfolio">
+      <div class="container">
+        <h2 class="page-section-heading text-center">Portfolio</h2>
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="divider-custom-line"></div>
         </div>
+        <div class="row justify-content-center">
+          <!-- 1. SPX -->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal8"
+            >
+              <img src="assets/img/portfolio/spx.png" alt="SPX" />
+              <div class="portfolio-item-caption">
+                <div class="portfolio-item-caption-content text-center">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <div class="portfolio-title">SPX</div>
+            </div>
+          </div>
+
+          <!-- 2. Tsarengine.com -->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal7"
+            >
+              <img
+                src="assets/img/portfolio/tsarengine.png"
+                alt="Tsarengine.com"
+              />
+              <div class="portfolio-item-caption">
+                <div class="portfolio-item-caption-content text-center">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <div class="portfolio-title">Tsarengine.com</div>
+            </div>
+          </div>
+
+          <!-- 3. Ember Eye -->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal3"
+            >
+              <img src="assets/img/portfolio/eternal.png" alt="Ember Eye" />
+              <div class="portfolio-item-caption">
+                <div class="portfolio-item-caption-content text-center">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <div class="portfolio-title">Ember Eye</div>
+            </div>
+          </div>
+
+          <!-- 4. Eternal Vigil -->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal5"
+            >
+              <img src="assets/img/portfolio/Vigil.png" alt="Eternal Vigil" />
+              <div class="portfolio-item-caption">
+                <div class="portfolio-item-caption-content text-center">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <div class="portfolio-title">Eternal Vigil</div>
+            </div>
+          </div>
+
+          <!-- 5. Tsar Launcher -->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal2"
+            >
+              <img src="assets/img/portfolio/Tsar.png" alt="Tsar Launcher" />
+              <div class="portfolio-item-caption">
+                <div class="portfolio-item-caption-content text-center">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <div class="portfolio-title">Tsar Launcher</div>
+            </div>
+          </div>
+
+          <!-- 6. The Meaning -->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal4"
+            >
+              <img src="assets/img/portfolio/meaning.jpg" alt="The Meaning" />
+              <div class="portfolio-item-caption">
+                <div class="portfolio-item-caption-content text-center">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <div class="portfolio-title">The Meaning</div>
+            </div>
+          </div>
+
+          <!-- 7. MSSK Studio -->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div
+              class="portfolio-item"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal1"
+            >
+              <img src="assets/img/portfolio/MSSK.png" alt="MSSK Studio" />
+              <div class="portfolio-item-caption">
+                <div class="portfolio-item-caption-content text-center">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <div class="portfolio-title">MSSK Studio</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="page-section bg-dark text-white" id="contact">
-        <div class="container">
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 text-white">Achivements</h2>
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div class="row justify-content-center">
-                <h5>
-                    ※Student of the Year Award for 2023, city of Ruse.
-                    <br>
-                    <br>
-                    <br>
-                    ※Diploma Crystal Prize "The Programme Committe of 62-nd Scientific Conference RU&SU'23".
-                    <br>
-                    <br>
-                    <br>
-                    ※Certificate of excellent performance at Youth Expo VII.
-                    <br>
-                    <br>
-                    <br>
-                    ※Certificate for 2-nd prize from student scientific session 2022, section "Informatics and
-                    information technologies" - 2022.
-                    <br>
-                    <br>
-                    <br>
-                    ※Certificate for 1-st prize from student scientific session 2023, section "Informatics and
-                    information technologies" - 2023.
-                    <br>
-                    <br>
-                    <br>
-                    ※Certificate of participation in the "XXXVI Republican Student programming olympiad".
-                    <br>
-                    <br>
-                    <br>
-                    ※Certificate of participation in the "XXXV Republican Student programming olympiad".
-                    <br>
-                    <br>
-                    <br>
-                    ※Certificate for 2-rd place in a university programming olympiad - 2022.
-                    <br>
-                    <br>
-                    <br>
-                    ※Certificate for 3-rd place in a university programming olympiad - 2023.
-                    <br>
-                    <br>
-                    <br>
-                    ※Certificate for participation in the оlympiad in networks and network technologies.
-                    <br>
-                    <br>
-                    <br>
-                    ※Certificate from the Ministry of Education and Culture for the Higher Education Institution of
-                    Digital Competences.
-                    <br>
-                    <br>
-                    <br>
-                    ※Certificate of professional qualification in the profession "Organizer of Internet applications".
-                </h5>
-            </div>
+    <section class="page-section" id="awards">
+      <div class="container">
+        <h2 class="page-section-heading text-center">Awards & Achievements</h2>
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-trophy"></i></div>
+          <div class="divider-custom-line"></div>
         </div>
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="awards-list">
+              <div class="award-item">
+                ※ Diploma: ICDD award for imagination. International Conference
+                on Applied Informatics.
+              </div>
+              <div class="award-item">
+                ※ Student of the Year Award for 2023, city of Ruse.
+              </div>
+              <div class="award-item">
+                ※ Diploma Crystal Prize "The Programme Committee of 62-nd
+                Scientific Conference RU&SU'23".
+              </div>
+              <div class="award-item">
+                ※ Certificate of excellent performance at Youth Expo VIII.
+              </div>
+              <div class="award-item">
+                ※ Certificate of excellent performance at Youth Expo VII.
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate for 2-nd prize from student scientific session
+                2022, section "Informatics and information technologies" - 2022.
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate for 1-st prize from student scientific session
+                2023, section "Informatics and information technologies" - 2023.
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate of participation in the "XXXVII Republican Student
+                programming olympiad".
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate of participation in the "XXXVI Republican Student
+                programming olympiad".
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate of participation in the "XXXV Republican Student
+                programming olympiad".
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate of participation in the "XXXIV Republican Student
+                programming olympiad".
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate for 1-st place in a university programming
+                olympiad - 2024.
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate for 3-rd place in a university programming
+                olympiad - 2023.
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate for 2-nd place in a university programming
+                olympiad - 2022.
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate for participation in the olympiad in networks and
+                network technologies.
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate from the Ministry of Education and Culture for the
+                Higher Education Institution of Digital Competences.
+              </div>
+              <div class="award-item d-none" id="hidden-awards">
+                ※ Certificate of professional qualification in the profession
+                "Organizer of Internet applications".
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="expand-btn" onclick="toggleAwards()">
+                <i class="fas fa-chevron-down me-2"></i>
+                <span id="expand-text">Show More Awards</span>
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <footer class="footer text-center bg-secondary">
-        <div class="container">
-            <div class="row">
 
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Ruse, Bulgaria</h4>
-                </div>
-
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Socials</h4>
-                    <a class="btn btn-outline-light btn-social mx-1"
-                        href="https://www.linkedin.com/in/serkan-sadulov/"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/SerkanSadulov"><i
-                            class="fab fa-fw fa-github"></i></a>
-                </div>
-
-                <div class="col-lg-4">
-                    <h4 class="text-uppercase mb-4">Email</h4>
-                    <p class="lead mb-0">
-                        Serkansadulov@gmail.com
-                    </p>
-                </div>
-            </div>
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Location</h4>
+            <p class="lead mb-0">Ruse, Bulgaria</p>
+          </div>
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Connect</h4>
+            <a
+              class="social-btn"
+              href="https://www.linkedin.com/in/serkan-sadulov/"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a class="social-btn" href="https://github.com/SerkanSadulov">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="col-lg-4">
+            <h4 class="text-uppercase mb-4">Contact</h4>
+            <p class="lead mb-0">Serkansadulov@gmail.com</p>
+          </div>
         </div>
+      </div>
     </footer>
+
     <div class="copyright py-4 text-center text-white">
-        <div class="container"><small>Serkan Sadulov &copy;</small></div>
+      <div class="container">
+        <small>© 2025 Serkan Sadulov. All rights reserved.</small>
+      </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">"MSSK Studio" -
-                                    Website</h2>
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/MSSK.png" alt="..." />
-                                <p class="mb-4">MSSK Games represented an innovative game development venture where I
-                                    played a pivotal role, merging my expertise in web
-                                    development with my creative abilities in game design. This experience allowed me to
-                                    contribute significantly to the
-                                    project's success, blending technical proficiency with imaginative game concepts to
-                                    deliver engaging and dynamic gaming
-                                    experiences.
-                                </p>
-                                <button class="btn btn-secondary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <h2 class="portfolio-modal-title text-uppercase mb-0">
+                    MSSK Studio - Website
+                  </h2>
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
                     </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <img
+                    class="img-fluid rounded mb-5"
+                    src="assets/img/portfolio/MSSK.png"
+                    alt="MSSK Studio"
+                  />
+                  <p class="mb-4">
+                    MSSK Games represented an innovative game development
+                    venture where I played a pivotal role, merging my expertise
+                    in web development with my creative abilities in game
+                    design. This experience allowed me to contribute
+                    significantly to the project's success, blending technical
+                    proficiency with imaginative game concepts to deliver
+                    engaging and dynamic gaming experiences.
+                  </p>
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-xmark fa-fw"></i>
+                    Close Window
+                  </button>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tsar Launcher</h2>
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Tsar.png" alt="..." />
-                                <p class="mb-4">The Tsar Launcher is a key component of an ambitious project led by a
-                                    friend who is at the forefront of developing a
-                                    cutting-edge game engine. This launcher is ingeniously designed to streamline the
-                                    user experience, facilitating the
-                                    setting of paths to the engine core, organizing game repositories, and ensuring
-                                    users stay informed with the latest
-                                    updates and news. This utility exemplifies a commitment to enhancing accessibility
-                                    and efficiency for developers and
-                                    gamers alike, marking a significant step forward in the evolution of game
-                                    development tools.
-                                </p>
-                                <button class="btn btn-secondary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <h2 class="portfolio-modal-title text-uppercase mb-0">
+                    Tsar Launcher
+                  </h2>
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
                     </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <img
+                    class="img-fluid rounded mb-5"
+                    src="assets/img/portfolio/Tsar.png"
+                    alt="Tsar Launcher"
+                  />
+                  <p class="mb-4">
+                    Tsar Launcher is a custom-designed desktop launcher built
+                    with Electron. I developed it to deliver a modern,
+                    user-friendly experience that simplifies application access,
+                    automatic updates, and user authentication for a smooth
+                    desktop interaction. It integrates Node.js backend features
+                    for secure, dynamic configuration and robust performance.
+                  </p>
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-xmark fa-fw"></i>
+                    Close Window
+                  </button>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">"Ember Eye" -
-                                    Website</h2>
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/eternal.png" alt="..." />
-                                <p class="mb-4">Ember Eye is a tight-knit collective of friends dedicated to pushing the
-                                    boundaries of creativity in game development
-                                    and beyond. United by our passion, we embark on a journey to craft games and pursue
-                                    a variety of projects, each infused
-                                    with our unique blend of innovation and collaboration. Our small team size is our
-                                    strength, allowing for flexibility,
-                                    close communication, and a shared vision that guides us in bringing our imaginative
-                                    ideas to life.
-                                </p>
-                                <button class="btn btn-secondary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <h2 class="portfolio-modal-title text-uppercase mb-0">SPX</h2>
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
                     </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <img
+                    class="img-fluid rounded mb-5"
+                    src="assets/img/portfolio/spx.png"
+                    alt="SPX"
+                  />
+                  <p class="mb-4">
+                    SPX is an innovative online marketplace platform designed to empower individuals to sell their products and services with ease and flexibility. Developed as my bachelor’s thesis project, SPX combines modern web technologies with AI-driven features, including an integrated assistant powered by both API-based and locally hosted models. Built using ASP.NET and a clean, multi-layered architecture, SPX demonstrates a scalable, maintainable, and secure solution that reflects my passion for full-stack development, AI integration, and user-centric design. The platform not only showcases technical depth but also a vision for practical, real-world impact.
+                  </p>
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-xmark fa-fw"></i> Close Window
+                  </button>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">The Meaning</h2>
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/meaning.jpg" alt="..." />
-                                <p class="mb-4">"The Meaning" stands as a hallmark project in which I had the privilege
-                                    to contribute both in design and development.
-                                    This horror game captivates with its rich narrative, centering on the harrowing
-                                    journey of its main protagonist, Ethan.
-                                    Through a meticulous blend of suspenseful gameplay and deep storytelling, we aimed
-                                    to immerse players in Ethan's world,
-                                    challenging them to unravel the mysteries that lie at the heart of his story. This
-                                    experience was not just about
-                                    crafting a game but about weaving a tale that leaves a lasting impression on its
-                                    audience.<br>
-                                </p>
-                                <iframe style="width: 80%; height:200px"
-                                    src="https://store.steampowered.com/widget/2000480/"></iframe>
-                                <button class="btn btn-secondary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <h2 class="portfolio-modal-title text-uppercase mb-0">
+                    Tsarengine.com
+                  </h2>
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
                     </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <img
+                    class="img-fluid rounded mb-5"
+                    src="assets/img/portfolio/tsarengine.png"
+                    alt="Tsarengine.com"
+                  />
+                  <p class="mb-4">
+                    Tsar Engine is a versatile C++ game engine built to empower creators to bring immersive worlds to life—without worrying about fees, royalties, or licensing constraints. Designed out of a need for stability and performance beyond mainstream solutions like Unity and Unreal, Tsar provides a streamlined, modular architecture featuring Vulkan-based rendering, C++20 scripting, multithreaded runtime, and robust physics via Box2D 
+
+                    Developed by a tight-knit team, including Mustafa (“CreatorInDeep”) optimizing shadow mapping, Dzhan (“Wizendraw”) managing physics and audio, and fellow collaborator Serkan (“Crapten”) contributing web integration, Tsar thrives on clear communication, shared innovation, and collective passion .
+                    
+                    Our mission is simple: eliminate barriers to game development by offering a free, royalty-free engine that combines high performance with creative freedom. Whether you're crafting games, visualizations, or cinematic experiences, Tsar’s clean ECS design, reflective scripting, spatial audio, and advanced rendering tools let you focus on creating—while its modular architecture and community-driven roadmap ensure ongoing evolution .
+                  </p>
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-xmark fa-fw"></i> Close Window
+                  </button>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <h2 class="portfolio-modal-title text-uppercase mb-0">
+                    Ember Eye
+                  </h2>
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <img
+                    class="img-fluid rounded mb-5"
+                    src="assets/img/portfolio/eternal.png"
+                    alt="Tsarengine.com"
+                  />
+                  <p class="mb-4">
+                    Ember Eye is a tight-knit collective of friends dedicated to pushing the
+                    boundaries of creativity in game development
+                    and beyond. United by our passion, we embark on a journey to craft games and pursue
+                    a variety of projects, each infused
+                    with our unique blend of innovation and collaboration. Our small team size is our
+                    strength, allowing for flexibility,
+                    close communication, and a shared vision that guides us in bringing our imaginative
+                    ideas to life.
+                  </p>
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-xmark fa-fw"></i> Close Window
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Eternal Vigil</h2>
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Vigil.png" alt="..." />
-                                <p class="mb-4">This project represents the most significant endeavor I've embarked upon
+
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <h2 class="portfolio-modal-title text-uppercase mb-0">
+                    Eternal Vigil
+                  </h2>
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <img
+                    class="img-fluid rounded mb-5"
+                    src="assets/img/portfolio/Vigil.png"
+                    alt="Tsarengine.com"
+                  />
+                  <p class="mb-4">
+                    This project represents the most significant endeavor I've embarked upon
                                     in my career, where I embraced multiple roles
                                     including developer, game designer, and level designer, among others. The game, a
                                     tower defense masterpiece, showcases
@@ -483,60 +1088,92 @@
                                 </p>
                                 <iframe style="width:80%; height:200px"
                                     src="https://store.steampowered.com/widget/2543750/" frameborder="0"></iframe>
-                                <button class="btn btn-secondary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                  </p>
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-xmark fa-fw"></i> Close Window
+                  </button>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
-                        aria-label="Close"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Forkpoint
-                                    Internship project</h2>
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Forkpoint.png"
-                                    alt="..." />
-                                <p class="mb-4">Forkpoint, an e-commerce powerhouse, provided me with an exceptional
-                                    internship experience that was both enriching and
-                                    enjoyable. During my time there, I gained substantial knowledge in web development,
-                                    directly contributing to my
-                                    professional growth. I owe a great deal of gratitude to Forkpoint for this learning
-                                    opportunity. My key project involved
-                                    developing a fully functional e-commerce store specializing in clothing. This
-                                    hands-on experience not only honed my
-                                    technical skills but also deepened my understanding of the e-commerce landscape.
-                                </p>
-                                <button class="btn btn-secondary" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close Window
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-</body>
 
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <h2 class="portfolio-modal-title text-uppercase mb-0">
+                    The Meaning
+                  </h2>
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <img
+                    class="img-fluid rounded mb-5"
+                    src="assets/img/portfolio/meaning.jpg"
+                    alt="Tsarengine.com"
+                  />
+                  <p class="mb-4">
+                    "The Meaning" stands as a hallmark project in which I had
+                    the privilege to contribute both in design and development.
+                    This horror game captivates with its rich narrative,
+                    centering on the harrowing journey of its main protagonist,
+                    Ethan. Through a meticulous blend of suspenseful gameplay
+                    and deep storytelling, we aimed to immerse players in
+                    Ethan's world, challenging them to unravel the mysteries
+                    that lie at the heart of his story. This experience was not
+                    just about crafting a game but about weaving a tale that
+                    leaves a lasting impression on its audience.
+                  </p>
+                  <iframe
+                    style="width: 80%; height: 200px"
+                    src="https://store.steampowered.com/widget/2000480/"
+                  ></iframe>
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-xmark fa-fw"></i> Close Window
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom script for toggling awards -->
+    <script>
+      function toggleAwards() {
+        const hiddenAwards = document.querySelectorAll("#hidden-awards");
+        const expandText = document.getElementById("expand-text");
+        const isHidden = hiddenAwards[0].classList.contains("d-none");
+
+        hiddenAwards.forEach((item) => {
+          item.classList.toggle("d-none");
+        });
+
+        expandText.textContent = isHidden
+          ? "Show Less Awards"
+          : "Show More Awards";
+      }
+    </script>
+  </body>
 </html>
