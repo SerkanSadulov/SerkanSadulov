@@ -1,9 +1,11 @@
-# Hi, I’m :contentReference[oaicite:1]{index=1} 👋
+
+
+# Hi, I’m Serkan Sadulov 👋
 
 **Full-Stack Web Developer** • **Desktop Apps Developer** • **Game Dev Enthusiast**  
-Based in :contentReference[oaicite:2]{index=2}, :contentReference[oaicite:3]{index=3} • Currently at :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}
+Based in Ruse, Bulgaria • Currently at University of Ruse
 
-I’ve been building full-stack products since high school—strong on **data structures, algorithms, and databases**—and I enjoy shipping practical systems with clean architecture. My work spans **web platforms**, **desktop tooling**, and **game projects**. :contentReference[oaicite:6]{index=6}
+🌐 Portfolio: https://serkan.darosh.online/
 
 ---
 
@@ -21,35 +23,36 @@ I’ve been building full-stack products since high school—strong on **data st
 **Databases:** MSSQL / T-SQL, MySQL, MongoDB  
 **Testing / Automation:** Selenium  
 **Game dev:** Unity, C/C++  
-**Tools:** Git, Photoshop, DaVinci Resolve, Sony Vegas :contentReference[oaicite:7]{index=7}
+**Tools:** Git, Photoshop, DaVinci Resolve, Sony Vegas
 
 ---
 
 ## 🚀 Featured work
+
 ### **SPX** — Online marketplace (Bachelor’s thesis)
-An online marketplace platform with **AI-driven features** (assistant powered by API-based + locally hosted models), built with **ASP.NET** and a clean multi-layer architecture. :contentReference[oaicite:8]{index=8}
+Online marketplace platform with **AI-driven features** (assistant powered by API-based + locally hosted models), built with **ASP.NET** and a clean multi-layer architecture.
 
 ### **Tsar Launcher** — Electron desktop launcher
-A custom desktop launcher focused on **simple access**, **auto-updates**, and **authentication**, using Electron with Node.js backend capabilities for dynamic configuration and secure behavior. :contentReference[oaicite:9]{index=9}
+Custom desktop launcher focused on **simple access**, **auto-updates**, and **authentication**, using Electron with Node.js backend capabilities for dynamic configuration and secure behavior.
 
-More on my portfolio: **https://serkan.darosh.online/** :contentReference[oaicite:13]{index=13}
+More details: https://serkan.darosh.online/
 
 ---
 
 ## 🏆 Awards & achievements (highlights)
-- ICDD award for imagination — International Conference on Applied Informatics :contentReference[oaicite:14]{index=14}
-- Student of the Year (2023), city of Ruse :contentReference[oaicite:15]{index=15}
-- 1st place — University programming olympiad (2024) :contentReference[oaicite:16]{index=16}
-- 1st prize — Student scientific session (Informatics & IT, 2023) :contentReference[oaicite:17]{index=17}
+- ICDD award for imagination — International Conference on Applied Informatics
+- Student of the Year (2023), city of Ruse
+- 1st place — University programming olympiad (2024)
+- 1st prize — Student scientific session (Informatics & IT, 2023)
 
-(Full list on my website.)
+(Full list on my portfolio.)
 
 ---
 
 ## 🤝 Connect
-- GitHub: https://github.com/SerkanSadulov :contentReference[oaicite:18]{index=18}
-- LinkedIn: https://www.linkedin.com/in/serkan-sadulov/ :contentReference[oaicite:19]{index=19}
-- Email: [email protected] :contentReference[oaicite:20]{index=20}
+- GitHub: https://github.com/SerkanSadulov
+- LinkedIn: https://www.linkedin.com/in/serkan-sadulov/
+- Email: serkansadulov@gmail.com
 
 ---
 
