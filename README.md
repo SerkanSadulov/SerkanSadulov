@@ -12,7 +12,7 @@ Based in Ruse, Bulgaria • Currently at University of Ruse
 ## 🔥 What I build
 - **Web apps** with clean multi-layer architecture (scalable, maintainable, secure)
 - **Desktop apps** with modern UX + Node backends (Electron)
-- **Game / engine projects** (C++ / Unity) with a focus on performance & modular design
+- **Game developer** (Unity/C#) with a focus on performance & modular design
 
 ---
 
@@ -22,7 +22,7 @@ Based in Ruse, Bulgaria • Currently at University of Ruse
 **Desktop:** Electron  
 **Databases:** MSSQL / T-SQL, MySQL, MongoDB  
 **Testing / Automation:** Selenium  
-**Game dev:** Unity, C/C++  
+**Game dev:** Unity, C#  
 **Tools:** Git, Photoshop, DaVinci Resolve, Sony Vegas
 
 ---
@@ -50,7 +50,6 @@ More details: https://serkan.darosh.online/
 ---
 
 ## 🤝 Connect
-- GitHub: https://github.com/SerkanSadulov
 - LinkedIn: https://www.linkedin.com/in/serkan-sadulov/
 - Email: serkansadulov@gmail.com
 
