@@ -5,7 +5,7 @@
 **Full-Stack Web Developer** • **Desktop Apps Developer** • **Game Dev Enthusiast**  
 Based in Ruse, Bulgaria • Currently at University of Ruse
 
-🌐 Portfolio: https://serkan.darosh.online/
+🌐 Portfolio: https://sadulov.com/
 
 ---
 
